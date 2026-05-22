@@ -1,27 +1,49 @@
-# phpBB Notes Extension
+Notes for phpBB 3.3
+===========
 
-This is the repository for the development of the phpBB Notes Extension
+Extension for phpBB that lets every registered user keep a private notepad on the forum.
+Extension by Jakub Senko ([Senky](https://github.com/Senky)). 
 
-[![Build Status](https://travis-ci.org/Senky/phpbb-ext-notes.svg?branch=develop)](https://travis-ci.org/Senky/phpbb-ext-notes)
+**Version:** 2.1.0 (22/05/2026)
 
-## Install
+#### Requirements
+- phpBB 3.3.0 or higher
+- PHP 7.1.3 or higher
 
-1. [Download the latest validated release](https://www.phpbb.com/customise/db/extension/notes/).
-2. Unzip the downloaded release and copy it to the `ext` directory of your phpBB board.
+#### Features
+- Per-user private notepad accessible from the quick links menu
+- Notes are stored on the `user_note` column of the users table and never shown to other users, administrators, or moderators
+- Single page at `/app.php/notes`
+- Bots are redirected to the index
+
+#### ACP Options
+None — the extension has no configurable settings.
+
+#### Extension integrations
+None.
+
+#### Languages
+English, German, Dutch, French, Spanish, Estonian, Portuguese (Brazil), Russian, Arabic
+
+#### Tested on
+prosilver
+
+#### Installation
+1. [Download the latest release](https://github.com/Senky/notes) and unzip it.
+2. Copy the contents to `/ext/senky/notes/` (so that `composer.json` is at `/ext/senky/notes/composer.json`).
 3. Navigate in the ACP to `Customise -> Manage extensions`.
-4. Look for `Notes` under the Disabled Extensions list, and click its `Enable` link.
+4. Find `Notes` under "Disabled Extensions" and click `Enable`.
 
-## Uninstall
+#### Uninstallation
+1. Navigate in the ACP to `Customise -> Manage extensions`.
+2. Click the `Disable` link for `Notes`.
+3. To permanently uninstall, click `Delete Data`, then delete the `notes` folder from `/ext/senky/`.
 
-1. Navigate in the ACP to `Customise -> Extension Management -> Extensions`.
-2. Look for `Notes` under the Enabled Extensions list, and click its `Disable` link.
-3. To permanently uninstall, click `Delete Data` and then delete the `/ext/senky/notes` directory.
+#### Support
+- [Support forum](https://www.avathar.be/forum/viewforum.php?f=16)
 
-## Support
-
-* **Important: Only official release versions validated by the phpBB Extensions Team should be installed on a live forum. Pre-release (beta, RC) versions downloaded from this repository are only to be used for testing on offline/development forums and are not officially supported.**
-* Report bugs and other issues to our [Issue Tracker](https://github.com/Senky/phpbb-ext-notes/issues).
-* Support requests should be posted and discussed in the [Notes topic at phpBB.com](https://www.phpbb.com/customise/db/extension/notes/support).
-
-## License
+#### License
 [GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
+
+
+Originally by Jakub Senko. Updated for phpBB 3.3 by Andy Vandenberghe (Sajaki).

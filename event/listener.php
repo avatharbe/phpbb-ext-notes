@@ -23,22 +23,17 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\controller\helper */
 	protected $helper;
 
-	/** @var \phpbb\config\config */
-	protected $config;
-
 	/**
 	* Constructor
 	*
 	* @param \phpbb\template\template	$template			Template object
 	* @param \phpbb\controller\helper	$helper				Helper object
-	* @param \phpbb\config\config		$config				Config object
 	* @access public
 	*/
-	public function __construct(\phpbb\template\template $template, \phpbb\controller\helper $helper, \phpbb\config\config $config)
+	public function __construct(\phpbb\template\template $template, \phpbb\controller\helper $helper)
 	{
 		$this->template = $template;
 		$this->helper = $helper;
-		$this->config = $config;
 	}
 
 	/**
@@ -84,7 +79,6 @@ class listener implements EventSubscriberInterface
 	{
 		$this->template->assign_vars(array(
 			'U_SENKY_NOTES'	=> $this->helper->route('senky_notes_notes'),
-			'S_IS_31'		=> version_compare($this->config['version'], '3.2.0', '<'),
 		));
 	}
 }
